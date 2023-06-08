@@ -1,7 +1,7 @@
 -- Script di creazione
 
 --Creazione del database
-CREATE DATABASE "Cookies-Profilation"
+CREATE DATABASE "Cookies Profilation"
     WITH
         OWNER = postgres
         ENCODING = 'UTF8'
@@ -16,7 +16,7 @@ CREATE DATABASE "Cookies-Profilation"
 DROP TABLE IF EXISTS "Sito";
 CREATE TABLE "Sito" (
     "URL" VARCHAR NOT NULL,
-    "Nome Sito" VARCHAR(20) NOT NULL,
+    "Nome Sito" VARCHAR NOT NULL,
     PRIMARY KEY ("URL")
 );
 
@@ -119,7 +119,7 @@ CREATE TABLE "Lettura Registrata" (
     "Link Articolo" VARCHAR NOT NULL,
     "Titolo Articolo" VARCHAR NOT NULL,
     "Utente Registrato" VARCHAR NOT NULL,
-    "Tempo Lettura Effettivo" TIME NOT NULL,
+    "Tempo Lettura Effettivo" INTEGER NOT NULL,
     PRIMARY KEY("Link Articolo", "Titolo Articolo", "Utente Registrato"),
     FOREIGN KEY ("Utente Registrato") REFERENCES "Utente Registrato"("Username"),
     FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo")
@@ -130,7 +130,7 @@ CREATE TABLE "Lettura Anonima" (
     "Link Articolo" VARCHAR NOT NULL,
     "Titolo Articolo" VARCHAR NOT NULL,
     "Utente Cookieless" VARCHAR NOT NULL,
-    "Tempo Lettura Effettivo" TIME NOT NULL,
+    "Tempo Lettura Effettivo" INTEGER NOT NULL,
     PRIMARY KEY("Link Articolo", "Titolo Articolo", "Utente Cookieless"),
     FOREIGN KEY ("Utente Cookieless") REFERENCES "Utente Cookieless"("IP"),
     FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo")
