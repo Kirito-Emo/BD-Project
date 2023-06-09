@@ -7,7 +7,7 @@
 
 /*
  * Query con operatore di aggregazione e una join a 3 tabelle
- * Richiesta: Quanti utenti registrati accedono ad un sito
+ * Richiesta: Quanti utenti registrati accedono ad un sito con uno specifico indirizzo IP
  */
 
 SELECT COUNT (ALL ar."Utente Registrato") AS "Tot Utenti/Sito"
@@ -32,12 +32,21 @@ SELECT C.*
 
 /*
  * Query insiemistica
- * Richiesta: 
+ * Richiesta: Estrarre quanti utenti di sesso femminile hanno visitato un determinato sito con un'età superiore ai 16 anni
  */
+
+SELECT UR."Username"
+	FROM "Utente Registrato" UR
+	GROUP BY UR."Username"
+	HAVING UR."Età" > 16 AND UR."Sesso" = 'F'
+	INTERSECT
+SELECT AR."Utente Registrato"
+	FROM "Accesso Registrato" AR
+	WHERE AR."Sito" = 'https://www.gazzetta.it'
 
 /*
  * Query opzionale nidificata
- * Richiesta: Quanti utenti hanno accettato i cookie di un determinato sito
+ * Richiesta: Estrarre i cookie di sessione che denotano l'utilizzo dello stesso Sistema Operativo
  */
 
 SELECT *

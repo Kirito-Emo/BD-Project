@@ -131,7 +131,7 @@ INSERT INTO "Cookie Sessione" ("ID", "Nome Cookie", "Descrizione", "Sistema Oper
         ('789634152', 'session_code', ' Questo cookie di sessione contiene un codice o un numero di identificazione associato alla sessione dell''utente', 'Windows-11Home', 'Cinese','2560x1440','Chrome', '2021-10-22'),
         ('197306482', 'session_identifier', 'Questo cookie di sessione contiene un identificatore univoco associato alla sessione dell''utente', 'Windows-11Pro', 'Coreano','1600x900','Microsoft-Edge', '2019-12-06'),
         ('123798604', 'session_auth', 'Questo cookie di sessione viene utilizzato per autenticare l''utente durante la sessione.', 'Ubuntu', 'Tedesco','1280x1024','Mozilla Firefox','2016-08-30'),
-        ('056013876', 'session_control', 'Questo cookie di sessione è utilizzato per il controllo e la gestione della sessione dell''utente', 'Ventura-13', 'Italiano','1920x1200','Brave', '2023-02-11'),
+        ('056013876', 'session_control', 'Questo cookie di sessione è utilizzato per il controllo e la gestione della sessione dell''utente', 'Windows-10Home', 'Italiano','1920x1200','Brave', '2023-02-11'),
         ('456763478', 'session_manager', 'Questo cookie di sessione contiene informazioni sul gestore della sessione utilizzato per gestire la sessione dell''utente', 'ArchLinux', 'Francese','1024x768','Chrome', '2015-06-18');
 
 -- Popolamento Utente Registrato
@@ -215,14 +215,15 @@ INSERT INTO "Accesso Registrato" ("Sito", "Utente Registrato")
   VALUES
     ('https://repubblica.it', 'not_quaily'),
     ('https://tg24.sky.it', 'ricky_raffons'),
-    ('https://corrieredelvino.it', 'ilary_renz'),
+    ('https://www.gazzetta.it', 'ilary_renz'),
     ('https://www.gazzetta.it', 'teo_posti'),
     ('https://libero.it', 'mary_rosy'),
     ('https://tg24.sky.it', 'alexander_hill'),
     ('https://libero.it', 'anna_mena'),
     ('https://repubblica.it', 'fabiana_raffone'),
     ('https://corrieredelvino.it', 'lisa_brown'),
-    ('https://www.gazzetta.it', 'ele_kaneki');
+    ('https://www.gazzetta.it', 'ele_kaneki'),
+    ('https://www.gazzetta.it', 'olivia_turner');
   
 -- Popolamento Lettura Registrata
 
