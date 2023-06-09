@@ -176,18 +176,38 @@ INSERT INTO "Utente Cookieless" ("IP", "ID Cookie")
 
 -- Popolamento Commento
 
-INSERT INTO "Commento" ("Data Scrittura", "Username Utente", "Ranking", "Testo", "Link Articolo", "Titolo Articolo") 
+INSERT INTO "Commento" ("Data Scrittura", "Username Utente", "Ranking", "Testo", "Link Articolo", "Titolo Articolo")
     VALUES
         ('2023-10-08', 'ricky_raffons', 5, 'Questo articolo è davvero molto interessante', 'https://libero.it/nuova-supercar-tesla', 'Nuova Supercar Tesla'),
         ('2023-05-07', 'ilary_renz', 2, 'Grazie per la condivisione!', 'https://www.gazzetta.it/emily-ratajkowski-fisico-top-a-32-anni','Emily Ratajkowski e i suoi 32 anni' ),
         ('2022-06-06', 'olivia_turner', 1, 'Ho qualche riserva su questo argomento.', 'https://www.repubblica.it/elisir_di_lunga_vita_nei_pipistrelli', 'Elisir di lunga vita nei pipistrelli?'),
-        ('2021-06-05', 'teo_posti', 4, 'Non mi ritrovo con quanto scritto.', 'https://corrieredelvino.it/weingut-plonerhof-un-paradiso-del-vino','Weingut Plonerhof: un Paradiso del vino'),
+        ('2021-06-05', 'teo_posti', 2, 'Non mi ritrovo con quanto scritto.', 'https://corrieredelvino.it/weingut-plonerhof-un-paradiso-del-vino','Weingut Plonerhof: un Paradiso del vino'),
         ('2023-07-04', 'teo_posti', 3, 'Mi piacerebbe leggere più approfondimenti su questo tema.','https://tg24.sky.it/russia-ucraina-guerra-ultime-notizie', 'Guerra Ucraina Russia, diga distrutta'),
         ('2023-06-03', 'anna_mena', 5, 'Fantastico articolo, grazie!', 'https://libero.it/progetti-einstein-telescope-meloni-italia', 'Einstein Telescope in Italia'),
-        ('2023-06-02', 'not_quaily', 3, 'Mi ha aperto gli occhi su nuovi punti di vista.', 'https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento'),
+        ('2023-06-02', 'not_quaily', 5, 'Mi ha aperto gli occhi su nuovi punti di vista.', 'https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento'),
         ('2023-06-01', 'not_quaily', 4, 'Interessante ma avrei preferito più dati di supporto.', 'https://www.gazzetta.it/un-laser-per-ridurre-gli-infortuni', 'Un laser per ridurre gli infortuni'),
-        ('2023-05-31', 'not_quaily', 5, 'Non mi ha convinto del tutto.', 'https://www.repubblica.it/alzheimer_test_sangue', 'Alzheimer: test del sangue per capire chi rischia di ammalarsi'),
-        ('2023-05-30', 'alexander_hill', 1, 'Mi aspettavo qualcosa di diverso.','https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento');
+        ('2023-05-31', 'not_quaily', 3, 'Non mi ha convinto del tutto.', 'https://www.repubblica.it/alzheimer_test_sangue', 'Alzheimer: test del sangue per capire chi rischia di ammalarsi'),
+        ('2023-05-30', 'alexander_hill', 1, 'Mi aspettavo qualcosa di diverso.','https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento'),
+        ('2023-10-09', 'alexander_hill', 1, 'Mi aspettavo qualcosa di diverso.', 'https://libero.it/nuova-supercar-tesla', 'Nuova Supercar Tesla'),
+        ('2023-05-10', 'not_quaily', 3, 'Non mi ha convinto del tutto.', 'https://www.gazzetta.it/emily-ratajkowski-fisico-top-a-32-anni','Emily Ratajkowski e i suoi 32 anni' ),
+        ('2022-06-11', 'not_quaily', 4, 'Interessante ma avrei preferito più dati di supporto.', 'https://www.repubblica.it/elisir_di_lunga_vita_nei_pipistrelli', 'Elisir di lunga vita nei pipistrelli?'),
+        ('2021-06-12', 'not_quaily', 5, 'Mi ha aperto gli occhi su nuovi punti di vista.', 'https://corrieredelvino.it/weingut-plonerhof-un-paradiso-del-vino','Weingut Plonerhof: un Paradiso del vino'),
+        ('2023-07-13', 'anna_mena', 3, 'Mi piacerebbe leggere più approfondimenti su questo tema.','https://tg24.sky.it/russia-ucraina-guerra-ultime-notizie', 'Guerra Ucraina Russia, diga distrutta'),
+        ('2023-06-14', 'teo_posti', 5, 'Fantastico articolo, grazie!', 'https://libero.it/progetti-einstein-telescope-meloni-italia', 'Einstein Telescope in Italia'),
+        ('2023-06-15', 'teo_posti', 3, 'Mi piacerebbe leggere più approfondimenti su questo tema.', 'https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento'),
+        ('2023-06-16', 'olivia_turner', 2, 'Non mi ritrovo con quanto scritto.', 'https://www.gazzetta.it/un-laser-per-ridurre-gli-infortuni', 'Un laser per ridurre gli infortuni'),
+        ('2023-05-17', 'ilary_renz', 1, 'Ho qualche riserva su questo argomento.', 'https://www.repubblica.it/alzheimer_test_sangue', 'Alzheimer: test del sangue per capire chi rischia di ammalarsi'),
+        ('2023-05-18', 'ricky_raffons', 5, 'Questo articolo è davvero molto interessante','https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento'),
+        ('2023-10-19', 'teo_posti', 3, 'Mi piacerebbe leggere più approfondimenti su questo tema.', 'https://libero.it/nuova-supercar-tesla', 'Nuova Supercar Tesla'),
+        ('2023-05-20', 'alexander_hill', 1, 'Ho qualche riserva su questo argomento.', 'https://www.gazzetta.it/emily-ratajkowski-fisico-top-a-32-anni','Emily Ratajkowski e i suoi 32 anni' ),
+        ('2022-06-21', 'olivia_turner', 2, 'Non mi ritrovo con quanto scritto.', 'https://www.repubblica.it/elisir_di_lunga_vita_nei_pipistrelli', 'Elisir di lunga vita nei pipistrelli?'),
+        ('2021-06-22', 'ilary_renz', 4, 'Non mi ritrovo con quanto scritto.', 'https://corrieredelvino.it/weingut-plonerhof-un-paradiso-del-vino','Weingut Plonerhof: un Paradiso del vino'),
+        ('2023-07-23', 'ricky_raffons', 5, 'Fantastico articolo, grazie!','https://tg24.sky.it/russia-ucraina-guerra-ultime-notizie', 'Guerra Ucraina Russia, diga distrutta'),
+        ('2023-06-24', 'not_quaily', 5, 'Fantastico articolo, grazie!', 'https://libero.it/progetti-einstein-telescope-meloni-italia', 'Einstein Telescope in Italia'),
+        ('2023-06-25', 'anna_mena', 1, 'Mi aspettavo qualcosa di diverso.', 'https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento'),
+        ('2023-06-26', 'not_quaily', 2, 'Non mi ritrovo con quanto scritto.', 'https://www.gazzetta.it/un-laser-per-ridurre-gli-infortuni', 'Un laser per ridurre gli infortuni'),
+        ('2023-05-27', 'not_quaily', 5, 'Non mi ha convinto del tutto.', 'https://www.repubblica.it/alzheimer_test_sangue', 'Alzheimer: test del sangue per capire chi rischia di ammalarsi'),
+        ('2023-05-28', 'teo_posti', 3, 'Mi piacerebbe leggere più approfondimenti su questo tema.','https://www.gazzetta.it/juventus-patteggiamento', 'Juve: come si svolgerà il patteggiamento');
 
 -- Popolamento Accesso Registrato
 
