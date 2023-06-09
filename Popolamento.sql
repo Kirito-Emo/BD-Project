@@ -125,10 +125,10 @@ INSERT INTO "Cookie Sessione" ("ID", "Nome Cookie", "Descrizione", "Sistema Oper
     VALUES
         ('168615442', 'session_id', 'Identificatore univoco assegnato alla sessione dell''utente', 'Windows-10Home', 'Italiano','1280x800','Mozilla-Firefox', '2019-03-27'),
         ('684685135', 'session_token', 'Questo cookie di sessione contiene un token di autenticazione generato per la sessione dell''utente', 'Kali-Linux', 'Inglese','1920x1080','Chrome', '2020-09-14'),
-        ('134567898', 'session_cookie', ' Questo cookie di sessione è un identificatore che viene utilizzato per memorizzare le informazioni di sessione dell''utente', 'Windows-7', 'Tedesco','1366x768','Brave', '2018-07-03'),
+        ('134567898', 'session_cookie', 'Questo cookie di sessione è un identificatore che viene utilizzato per memorizzare le informazioni di sessione dell''utente', 'Windows-7', 'Tedesco','1366x768','Brave', '2018-07-03'),
         ('951478263', 'user_session', 'Questo cookie di sessione è specifico per l''utente e viene utilizzato per mantenere e gestire la sua sessione durante l''interazione con il sito o l''applicazione', 'Windows-10Pro', 'Francese', '1680x1050', 'Microsoft-Edge', '2022-11-19'),
         ('753648912', 'session_key', 'Questo cookie di sessione contiene una chiave univoca generata per la sessione dell''utente', 'Fedora-37', 'Giapponese', '1440x900', 'Opera', '2017-05-08'),
-        ('789634152', 'session_code', ' Questo cookie di sessione contiene un codice o un numero di identificazione associato alla sessione dell''utente', 'Windows-11Home', 'Cinese','2560x1440','Chrome', '2021-10-22'),
+        ('789634152', 'session_code', 'Questo cookie di sessione contiene un codice o un numero di identificazione associato alla sessione dell''utente', 'Windows-11Home', 'Cinese','2560x1440','Chrome', '2021-10-22'),
         ('197306482', 'session_identifier', 'Questo cookie di sessione contiene un identificatore univoco associato alla sessione dell''utente', 'Windows-11Pro', 'Coreano','1600x900','Microsoft-Edge', '2019-12-06'),
         ('123798604', 'session_auth', 'Questo cookie di sessione viene utilizzato per autenticare l''utente durante la sessione.', 'Ubuntu', 'Tedesco','1280x1024','Mozilla Firefox','2016-08-30'),
         ('056013876', 'session_control', 'Questo cookie di sessione è utilizzato per il controllo e la gestione della sessione dell''utente', 'Windows-10Home', 'Italiano','1920x1200','Brave', '2023-02-11'),
