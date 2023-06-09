@@ -36,7 +36,7 @@ CREATE TABLE "Articolo" (
 
 DROP TABLE IF EXISTS "Cookie Persistenti";
 CREATE TABLE "Cookie Persistenti" (
-    "ID" SERIAL PRIMARY KEY,
+    "ID" INTEGER PRIMARY KEY,
     "Nome Cookie" VARCHAR NOT NULL,
     "Descrizione" VARCHAR NOT NULL,
     "Geolocalizzazione" VARCHAR NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE "Cookie Persistenti" (
 
 DROP TABLE IF EXISTS "Cookie Sessione";
 CREATE TABLE "Cookie Sessione" (
-    "ID" SERIAL PRIMARY KEY,
+    "ID" INTEGER PRIMARY KEY,
     "Nome Cookie" VARCHAR(20) NOT NULL,
     "Descrizione" VARCHAR NOT NULL,
     "Sistema Operativo" VARCHAR NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE "Utente Registrato" (
 DROP TABLE IF EXISTS "Utente Cookieless";
 CREATE TABLE "Utente Cookieless" (
     "IP" VARCHAR PRIMARY KEY,
-    "ID Cookie" SERIAL NOT NULL,
+    "ID Cookie" INTEGER NOT NULL,
     FOREIGN KEY ("ID Cookie") REFERENCES "Cookie Sessione"("ID")
 );
 
