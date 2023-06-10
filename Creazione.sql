@@ -84,14 +84,15 @@ CREATE TABLE "Tag" (
 
 DROP TABLE IF EXISTS "Commento";
 CREATE TABLE "Commento" (
-    "Data Scrittura" DATE PRIMARY KEY,
+    "Data Scrittura" DATE,
     "Username Utente" VARCHAR NOT NULL,
     "Ranking" INTEGER NOT NULL,
     "Testo" VARCHAR(250) NOT NULL,
     "Link Articolo" VARCHAR NOT NULL,
     "Titolo Articolo" VARCHAR NOT NULL,
     FOREIGN KEY ("Username Utente") REFERENCES "Utente Registrato"("Username"),
-    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo")
+    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo"),
+    PRIMARY KEY("Data Scrittura", "Username Utente")
 );
 
 -- Creazione delle relazioni per le associazioni
