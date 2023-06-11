@@ -87,10 +87,13 @@ $$ LANGUAGE plpgsql;
 
 -- Creazione Trigger
 CREATE TRIGGER check_limite_commenti
-BEFORE INSERT ON "Commento"
+BEFORE INSERT ON "Utente Cookieless"
 FOR EACH ROW
-EXECUTE FUNCTION limite_commenti();
+EXECUTE FUNCTION controllo_cookie_sessione();
 
+-------------------------------------------------------------------------------------
+
+/*
 /*
  * Trigger per Numero Commenti
  */
