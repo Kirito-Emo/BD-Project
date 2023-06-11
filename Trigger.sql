@@ -167,8 +167,7 @@ BEGIN
 	IF TRUE
 	THEN
 		INSERT INTO "Cookie Sessione Scaduti" ("ID", "Nome Cookie", "Descrizione", "Sistema Operativo", "Lingua", "Schermo", "Browser", "Data Creazione")
-			VALUES (OLD."ID", OLD."Nome Cookie", OLD."Descrizione", OLD."Sistema Operativo", OLD."Lingua", OLD."Schermo", OLD."Browser", OLD."Data Creazione")
-			ON CONFLICT ("ID") DO NOTHING;
+			VALUES (OLD."ID", OLD."Nome Cookie", OLD."Descrizione", OLD."Sistema Operativo", OLD."Lingua", OLD."Schermo", OLD."Browser", OLD."Data Creazione");
   END IF;
 	RETURN OLD;
 END;
