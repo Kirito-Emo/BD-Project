@@ -31,7 +31,9 @@ CREATE TABLE "Articolo" (
     "Tempo Lettura Stimato" INTEGER NOT NULL,
     "URL Sito" VARCHAR NOT NULL,
     PRIMARY KEY ("Link", "Titolo"),
-    FOREIGN KEY ("URL Sito") REFERENCES "Sito"("URL")
+    FOREIGN KEY ("URL Sito") REFERENCES "Sito"("URL") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Cookie Persistenti";
@@ -73,7 +75,9 @@ DROP TABLE IF EXISTS "Utente Cookieless";
 CREATE TABLE "Utente Cookieless" (
     "IP" VARCHAR PRIMARY KEY,
     "ID Cookie" INTEGER NOT NULL,
-    FOREIGN KEY ("ID Cookie") REFERENCES "Cookie Sessione"("ID")
+    FOREIGN KEY ("ID Cookie") REFERENCES "Cookie Sessione"("ID") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Tag";
@@ -90,9 +94,13 @@ CREATE TABLE "Commento" (
     "Testo" VARCHAR(250) NOT NULL,
     "Link Articolo" VARCHAR NOT NULL,
     "Titolo Articolo" VARCHAR NOT NULL,
-    FOREIGN KEY ("Username Utente") REFERENCES "Utente Registrato"("Username"),
-    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo"),
-    PRIMARY KEY("Data Scrittura", "Username Utente")
+    PRIMARY KEY("Data Scrittura", "Username Utente"),
+    FOREIGN KEY ("Username Utente") REFERENCES "Utente Registrato"("Username") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 -- Creazione delle relazioni per le associazioni
@@ -102,8 +110,12 @@ CREATE TABLE "Profilazione" (
     "Utente Registrato" VARCHAR NOT NULL,
     "Cookie Persistenti" INTEGER NOT NULL,
     PRIMARY KEY("Utente Registrato", "Cookie Persistenti"),
-    FOREIGN KEY ("Utente Registrato") REFERENCES "Utente Registrato"("Username"),
-    FOREIGN KEY ("Cookie Persistenti") REFERENCES "Cookie Persistenti"("ID")
+    FOREIGN KEY ("Utente Registrato") REFERENCES "Utente Registrato"("Username") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Cookie Persistenti") REFERENCES "Cookie Persistenti"("ID") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Accesso Registrato";
@@ -111,8 +123,12 @@ CREATE TABLE "Accesso Registrato" (
     "Sito" VARCHAR NOT NULL,
     "Utente Registrato" VARCHAR NOT NULL,
     PRIMARY KEY("Sito", "Utente Registrato"),
-    FOREIGN KEY ("Utente Registrato") REFERENCES "Utente Registrato"("Username"),
-    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL")
+    FOREIGN KEY ("Utente Registrato") REFERENCES "Utente Registrato"("Username") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Lettura Registrata";
@@ -122,8 +138,12 @@ CREATE TABLE "Lettura Registrata" (
     "Utente Registrato" VARCHAR NOT NULL,
     "Tempo Lettura Effettivo" INTEGER NOT NULL,
     PRIMARY KEY("Link Articolo", "Titolo Articolo", "Utente Registrato"),
-    FOREIGN KEY ("Utente Registrato") REFERENCES "Utente Registrato"("Username"),
-    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo")
+    FOREIGN KEY ("Utente Registrato") REFERENCES "Utente Registrato"("Username") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Lettura Anonima";
@@ -133,8 +153,12 @@ CREATE TABLE "Lettura Anonima" (
     "Utente Cookieless" VARCHAR NOT NULL,
     "Tempo Lettura Effettivo" INTEGER NOT NULL,
     PRIMARY KEY("Link Articolo", "Titolo Articolo", "Utente Cookieless"),
-    FOREIGN KEY ("Utente Cookieless") REFERENCES "Utente Cookieless"("IP"),
-    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo")
+    FOREIGN KEY ("Utente Cookieless") REFERENCES "Utente Cookieless"("IP") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Accesso Anonimo";
@@ -142,8 +166,12 @@ CREATE TABLE "Accesso Anonimo" (
     "Sito" VARCHAR NOT NULL,
     "Utente Cookieless" VARCHAR NOT NULL,
     PRIMARY KEY("Sito", "Utente Cookieless"),
-    FOREIGN KEY ("Utente Cookieless") REFERENCES "Utente Cookieless"("IP"),
-    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL")
+    FOREIGN KEY ("Utente Cookieless") REFERENCES "Utente Cookieless"("IP") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Possiede Registrato";
@@ -151,8 +179,12 @@ CREATE TABLE "Possiede Registrato" (
     "Sito" VARCHAR NOT NULL,
     "Cookie Persistenti" INTEGER NOT NULL,
     PRIMARY KEY("Sito", "Cookie Persistenti"),
-    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL"),
-    FOREIGN KEY ("Cookie Persistenti") REFERENCES "Cookie Persistenti"("ID")
+    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Cookie Persistenti") REFERENCES "Cookie Persistenti"("ID") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Possiede Anonimo";
@@ -160,8 +192,12 @@ CREATE TABLE "Possiede Anonimo" (
     "Cookie Sessione" INTEGER NOT NULL,
     "Sito" VARCHAR NOT NULL,
     PRIMARY KEY("Sito", "Cookie Sessione"),
-    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL"),
-    FOREIGN KEY ("Cookie Sessione") REFERENCES "Cookie Sessione"("ID")
+    FOREIGN KEY ("Sito") REFERENCES "Sito"("URL") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Cookie Sessione") REFERENCES "Cookie Sessione"("ID") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
 
 DROP TABLE IF EXISTS "Indice";
@@ -170,6 +206,10 @@ CREATE TABLE "Indice" (
     "Titolo Articolo" VARCHAR NOT NULL,
     "Tag" VARCHAR NOT NULL,
     PRIMARY KEY("Link Articolo", "Titolo Articolo", "Tag"),
-    FOREIGN KEY ("Tag") REFERENCES "Tag"("Keywords"),
-    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo")
+    FOREIGN KEY ("Tag") REFERENCES "Tag"("Keywords") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+    FOREIGN KEY ("Link Articolo", "Titolo Articolo") REFERENCES "Articolo"("Link", "Titolo") MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
 );
