@@ -80,14 +80,13 @@ BEGIN
     ) THEN
    		RAISE EXCEPTION 'L''utente ha già fatto un commento per questo articolo.';
     END IF;
-
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
 -- Creazione Trigger
 CREATE TRIGGER check_limite_commenti
-BEFORE INSERT ON "Utente Cookieless"
+BEFORE INSERT ON "Commento"
 FOR EACH ROW
 EXECUTE FUNCTION limite_commenti();
 
