@@ -139,8 +139,8 @@ BEGIN
             WHERE "Ranking" = NEW."Ranking"
     ) THEN
         RAISE EXCEPTION 'Il ranking di un commento deve essere compreso tra 1 e 5.';
-    RETURN NEW;
     END IF;
+    RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
