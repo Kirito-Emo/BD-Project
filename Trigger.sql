@@ -126,3 +126,26 @@ EXECUTE FUNCTION aggiorna_numero_commenti();
 /*
  * Trigger per Ranking
  */
+
+DROP TRIGGER IF EXISTS tr_controllo_ranking ON "Commento";
+
+-- Creazione funzione trigger
+CREATE OR REPLACE FUNCTION controllo_ranking()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF EXISTS (
+        SELECT *
+            FROM "Commento"
+            WHERE "Ranking" = NEW."Ranking"
+    ) THEN
+        RAISE EXCEPTION 'Il ranking di un commento deve essere compreso tra 1 e 5.';
+    RETURN NEW;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Creazione Trigger
+CREATE TRIGGER tr_controllo_articolo
+BEFORE INSERT ON "Commento"
+FOR EACH ROW
+EXECUTE FUNCTION controllo_ranking();
