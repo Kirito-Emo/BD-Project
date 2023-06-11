@@ -138,26 +138,26 @@ INSERT INTO "Cookie Sessione" ("ID", "Nome Cookie", "Descrizione", "Sistema Oper
 
 INSERT INTO "Utente Registrato" ("Username", "Nome", "Cognome", "Età", "Sesso", "Email", "IP", "Numero Commenti")
     VALUES
-        ('john_doe', 'John', 'Doe', 28, 'M', 'john.doe@example.com', '192.168.0.1', 15),
-        ('sarah_smith', 'Sarah', 'Smith', 32, 'F', 'sarah.smith@example.com', '192.168.0.2',8),
-        ('mike_jones', 'Mike', 'Jones', 35, 'M', 'mike.jones@example.com', '192.168.0.3', 20),
-        ('lisa_brown', 'Lisa', 'Brown', 24, 'F', 'lisa.brown@example.com', '192.168.0.4', 5),
-        ('david_clark', 'David', 'Clark', 29, 'M', 'david.clark@example.com', '192.168.0.5',12),
-        ('emma_wilson', 'Emma', 'Wilson', 27, 'F', 'emma.wilson@example.com', '192.168.0.6', 3),
-        ('brian_taylor', 'Brian', 'Taylor', 31, 'M', 'brian.taylor@example.com', '192.168.0.7', 18),
-        ('jessica_adams', 'Jessica', 'Adams', 26, 'F', 'jessica.adams@example.com', '192.168.0.8', 7),
-        ('alexander_hill', 'Alexander', 'Hill', 30, 'M', 'alexander.hill@example.com', '192.168.0.9', 14),
-        ('olivia_turner', 'Olivia', 'Turner', 25, 'F', 'olivia.turner@example.com', '192.168.0.10', 9),
-        ('fabiana_raffone', 'Fabiana', 'Raffone', 24, 'F', 'fabiana.raffone@example.com', '192.168.0.11', 35),
-        ('marco_postiglione', 'Marco', 'Postiglione', 18, 'M', 'marco.postiglione@example.com', '192.168.0.12', 6),
-        ('giorgi_q', 'Giorgia', 'Quagliuolo', 17, 'F', 'giorgi.q@example.com', '192.168.0.13', 22),
-        ('anna_mena', 'Anna', 'Raffone', 55, 'F', 'anna_mena@example.com', '192.168.0.14', 2),
-        ('mary_rosy', 'Mary', 'Cozzola', 60, 'F', 'mary.rosy@example.com', '192.168.0.15', 10),
-        ('ilary_renz', 'Ilaria', 'Renzullo', 18, 'F', 'ilary_renz@example.com', '192.168.0.16', 37),
-        ('teo_posti', 'Teo', 'Postiglione', 21, 'M', 'm.postiglione10@studenti.unisa.it', '192.168.0.17', 4),
-        ('ricky_raffons', 'Ricky', 'Raffone', 22, 'M', 'ricky.raffons@example.com', '192.168.0.18', 1),
+        ('john_doe', 'John', 'Doe', 28, 'M', 'john.doe@example.com', '192.168.0.1', 0),
+        ('sarah_smith', 'Sarah', 'Smith', 32, 'F', 'sarah.smith@example.com', '192.168.0.2',0),
+        ('mike_jones', 'Mike', 'Jones', 35, 'M', 'mike.jones@example.com', '192.168.0.3', 0),
+        ('lisa_brown', 'Lisa', 'Brown', 24, 'F', 'lisa.brown@example.com', '192.168.0.4', 0),
+        ('david_clark', 'David', 'Clark', 29, 'M', 'david.clark@example.com', '192.168.0.5', 0),
+        ('emma_wilson', 'Emma', 'Wilson', 27, 'F', 'emma.wilson@example.com', '192.168.0.6', 0),
+        ('brian_taylor', 'Brian', 'Taylor', 31, 'M', 'brian.taylor@example.com', '192.168.0.7', 0),
+        ('jessica_adams', 'Jessica', 'Adams', 26, 'F', 'jessica.adams@example.com', '192.168.0.8', 0),
+        ('alexander_hill', 'Alexander', 'Hill', 30, 'M', 'alexander.hill@example.com', '192.168.0.9', 0),
+        ('olivia_turner', 'Olivia', 'Turner', 25, 'F', 'olivia.turner@example.com', '192.168.0.10', 0),
+        ('fabiana_raffone', 'Fabiana', 'Raffone', 24, 'F', 'fabiana.raffone@example.com', '192.168.0.11', 0),
+        ('marco_postiglione', 'Marco', 'Postiglione', 18, 'M', 'marco.postiglione@example.com', '192.168.0.12', 0),
+        ('giorgi_q', 'Giorgia', 'Quagliuolo', 17, 'F', 'giorgi.q@example.com', '192.168.0.13', 0),
+        ('anna_mena', 'Anna', 'Raffone', 55, 'F', 'anna_mena@example.com', '192.168.0.14', 0),
+        ('mary_rosy', 'Mary', 'Cozzola', 60, 'F', 'mary.rosy@example.com', '192.168.0.15', 0),
+        ('ilary_renz', 'Ilaria', 'Renzullo', 18, 'F', 'ilary_renz@example.com', '192.168.0.16', 0),
+        ('teo_posti', 'Teo', 'Postiglione', 21, 'M', 'm.postiglione10@studenti.unisa.it', '192.168.0.17', 0),
+        ('ricky_raffons', 'Ricky', 'Raffone', 22, 'M', 'ricky.raffons@example.com', '192.168.0.18', 0),
         ('ele_kaneki', 'Emanuele', 'Relmi', 21, 'M', 'ele.kaneki@example.com', '192.168.0.19', 0),
-        ('not_quaily', 'Francesco', 'Quagliuolo', 22, 'M', 'dottor.quagliaruolo@example.com', '192.168.0.20', 3);
+        ('not_quaily', 'Francesco', 'Quagliuolo', 22, 'M', 'dottor.quagliaruolo@example.com', '192.168.0.20', 0);
 
 -- Popolamento Utente Cookieless
 
