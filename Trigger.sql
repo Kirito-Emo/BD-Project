@@ -36,7 +36,7 @@ EXECUTE FUNCTION controllo_articolo();
 DROP TRIGGER IF EXISTS tr_utente_cookieless ON "Utente Cookieless";
 
 -- Creazione funzione trigger
-CREATE OR REPLACE FUNCTION controllo_cookie_sessione()
+CREATE OR REPLACE FUNCTION controllo_utente_cookieless()
 RETURNS TRIGGER AS $$
 BEGIN
     IF EXISTS (
@@ -54,7 +54,7 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER tr_utente_cookieless
 BEFORE INSERT ON "Utente Cookieless"
 FOR EACH ROW
-EXECUTE FUNCTION controllo_cookie_sessione();
+EXECUTE FUNCTION controllo_utente_cookieless();
 
 -------------------------------------------------------------------------------------
 
@@ -133,11 +133,7 @@ DROP TRIGGER IF EXISTS tr_controllo_ranking ON "Commento";
 CREATE OR REPLACE FUNCTION controllo_ranking()
 RETURNS TRIGGER AS $$
 BEGIN
-    IF EXISTS (
-        SELECT *
-            FROM "Commento"
-            WHERE "Ranking" = NEW."Ranking"
-    ) THEN
+    IF NEW."Ranking" < 1 OR NEW."Ranking" > 5 THEN
         RAISE EXCEPTION 'Il ranking di un commento deve essere compreso tra 1 e 5.';
     END IF;
     RETURN NEW;
@@ -149,3 +145,42 @@ CREATE TRIGGER tr_controllo_ranking
 BEFORE INSERT ON "Commento"
 FOR EACH ROW
 EXECUTE FUNCTION controllo_ranking();
+
+/*
+ * Trigger Cookie Sessione
+ */
+
+DROP TRIGGER IF EXISTS tr_controllo_cookie_sessione ON "Cookie Sessione";
+
+-- Creazione tabella di appoggio
+CREATE TABLE "Cookie Sessione Scaduti" (
+        "ID" INTEGER PRIMARY KEY,
+        "Nome Cookie" VARCHAR(20) NOT NULL,
+        "Descrizione" VARCHAR NOT NULL,
+        "Sistema Operativo" VARCHAR NOT NULL,
+        "Lingua" VARCHAR NOT NULL,
+        "Schermo" VARCHAR NOT NULL,
+        "Browser" VARCHAR NOT NULL,
+        "Data Creazione" DATE NOT NULL
+    );
+
+-- Creazione funzione trigger
+CREATE OR REPLACE FUNCTION controllo_cookie_sessione()
+RETURNS TRIGGER AS $$
+BEGIN
+	IF TRUE
+	THEN
+		INSERT INTO "Cookie Sessione Scaduti" ("ID", "Nome Cookie", "Descrizione", "Sistema Operativo", "Lingua", "Schermo", "Browser", "Data Creazione")
+			VALUES (OLD."ID", OLD."Nome Cookie", OLD."Descrizione", OLD."Sistema Operativo", OLD."Lingua", OLD."Schermo", OLD."Browser", OLD."Data Creazione")
+			ON CONFLICT ("ID") DO NOTHING;
+		--DELETE FROM "Cookie Sessione" WHERE "ID" = OLD."ID";
+  END IF;
+	RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Creazione Trigger
+CREATE TRIGGER tr_controllo_cookie_sessione
+AFTER DELETE ON "Cookie Sessione"
+FOR EACH ROW
+EXECUTE FUNCTION controllo_cookie_sessione();
