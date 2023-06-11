@@ -1,4 +1,6 @@
--- Script di creazione
+/*
+ * Script di creazione
+ */
 
 --Creazione del database
 CREATE DATABASE "Cookies Profilation"
