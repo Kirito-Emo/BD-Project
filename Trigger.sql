@@ -89,11 +89,8 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER check_limite_commenti
 BEFORE INSERT ON "Utente Cookieless"
 FOR EACH ROW
-EXECUTE FUNCTION controllo_cookie_sessione();
+EXECUTE FUNCTION limite_commenti();
 
--------------------------------------------------------------------------------------
-
-/*
 /*
  * Trigger per Numero Commenti
  */
@@ -173,7 +170,6 @@ BEGIN
 		INSERT INTO "Cookie Sessione Scaduti" ("ID", "Nome Cookie", "Descrizione", "Sistema Operativo", "Lingua", "Schermo", "Browser", "Data Creazione")
 			VALUES (OLD."ID", OLD."Nome Cookie", OLD."Descrizione", OLD."Sistema Operativo", OLD."Lingua", OLD."Schermo", OLD."Browser", OLD."Data Creazione")
 			ON CONFLICT ("ID") DO NOTHING;
-		--DELETE FROM "Cookie Sessione" WHERE "ID" = OLD."ID";
   END IF;
 	RETURN OLD;
 END;
