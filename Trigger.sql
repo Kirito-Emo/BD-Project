@@ -145,7 +145,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Creazione Trigger
-CREATE TRIGGER tr_controllo_articolo
+CREATE TRIGGER tr_controllo_ranking
 BEFORE INSERT ON "Commento"
 FOR EACH ROW
 EXECUTE FUNCTION controllo_ranking();
